@@ -1,0 +1,8 @@
+{
+  "name": "Hussain Al Hafiz",
+  "description": "হুসাইন আল হাফিজ ও কলরব শিল্পীগোষ্ঠীর সেরা ১০০টি ইসলামিক নাশিদ ও গানের বিশাল সম্ভার। Official 100 Songs Collection of Hussain Al Hafiz.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

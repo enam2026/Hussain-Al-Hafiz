@@ -1,0 +1,399 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+Syloti+Nagri:wght@400;500;600;700&family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Poppins", "Inter", sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-primary: #004E64;
+  --color-secondary: #00E5FF;
+  --color-accent: #FF4D00;
+  --color-highlight: #FF4D00;
+  --color-background: #F8FAFC;
+  --color-cards: #FFFFFF;
+  --color-text: #0A0F1A;
+
+  --color-brand-black: #0A0F1A;
+  --color-brand-cyan-deep: #004E64;
+  --color-brand-cyan-bright: #00E5FF;
+  --color-brand-orange: #FF4D00;
+  --color-brand-orange-accent: #FF4D00;
+}
+
+@utility font-heading {
+  font-family: var(--font-heading);
+}
+
+@utility font-serif {
+  font-family: var(--font-serif);
+}
+
+@utility font-mono {
+  font-family: var(--font-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Glassmorphism utilities */
+.glass-nav {
+  background: rgba(248, 250, 252, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 24px; /* Increased border radius */
+}
+
+.glass-card-dark {
+  background: rgba(10, 15, 26, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px; /* Increased border radius */
+}
+
+/* Image saturation premium adjustments */
+.img-premium-vibrant {
+  filter: saturate(1.05) contrast(1.01);
+  transition: filter 0.3s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Custom premium styles */
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-blue-purple {
+  background: linear-gradient(135deg, #0A0F1A 0%, #004E64 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-purple-pink {
+  background: linear-gradient(135deg, #FF4D00 0%, #004E64 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-emerald-teal {
+  background: linear-gradient(135deg, #004E64 0%, #00E5FF 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-orange-yellow {
+  background: linear-gradient(135deg, #FF4D00 0%, #00E5FF 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-brand-cyan {
+  background: linear-gradient(135deg, #004E64 0%, #00E5FF 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-brand-orange {
+  background: linear-gradient(135deg, #FF4D00 0%, #004E64 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.shadow-brand-cyan-glow {
+  box-shadow: 0 10px 30px -10px rgba(0, 78, 100, 0.1), 0 0 15px -2px rgba(0, 229, 255, 0.05);
+}
+
+.shadow-brand-cyan-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px -10px rgba(0, 78, 100, 0.15), 0 0 20px 2px rgba(0, 229, 255, 0.1);
+}
+
+.shadow-brand-orange-glow {
+  box-shadow: 0 10px 30px -10px rgba(255, 77, 0, 0.1), 0 0 15px -2px rgba(255, 77, 0, 0.05);
+}
+
+.shadow-brand-orange-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px -10px rgba(255, 77, 0, 0.15), 0 0 20px 2px rgba(255, 77, 0, 0.1);
+}
+
+/* Disabled float animations for a premium, stable feel with no layout shifts */
+@keyframes float-gentle-1 {
+  0%, 100% { transform: none; }
+  50% { transform: none; }
+}
+
+@keyframes float-gentle-2 {
+  0%, 100% { transform: none; }
+  50% { transform: none; }
+}
+
+@keyframes float-gentle-3 {
+  0%, 100% { transform: none; }
+  50% { transform: none; }
+}
+
+.animate-float-1 {
+  animation: none;
+}
+
+.animate-float-2 {
+  animation: none;
+}
+
+.animate-float-3 {
+  animation: none;
+}
+
+/* Premium shadows */
+.shadow-premium-soft {
+  box-shadow: 0 10px 40px -10px rgba(15, 23, 42, 0.03), 0 1px 2px rgba(15, 23, 42, 0.01);
+}
+
+.shadow-premium-lg {
+  box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.02);
+}
+
+.shadow-premium-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.shadow-premium-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.08), 0 0 15px 1px rgba(0, 78, 100, 0.04);
+}
+
+.shadow-premium-hover-glow {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.shadow-premium-hover-glow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px -10px rgba(0, 78, 100, 0.15), 0 0 20px 2px rgba(255, 77, 0, 0.06);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F8FAFC;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+  border: 2px solid #F8FAFC;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Smooth zoom-in container */
+.img-zoom-hover {
+  overflow: hidden;
+}
+.img-zoom-hover img {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.img-zoom-hover:hover img {
+  transform: scale(1.02);
+}
+
+/* Multilingual fonts mapping with Hind Siliguri */
+.lang-en {
+  font-family: 'Inter', 'Poppins', sans-serif;
+}
+
+.lang-bn, .lang-syl-bengali {
+  font-family: 'Hind Siliguri', 'Inter', sans-serif;
+}
+
+/* Ensure Hind Siliguri is strictly used for all elements when Bengali or Sylheti Bengali-script is active */
+.lang-bn, .lang-bn *,
+.lang-syl-bengali, .lang-syl-bengali * {
+  --font-heading: "Hind Siliguri", sans-serif;
+  --font-sans: "Hind Siliguri", sans-serif;
+}
+
+.lang-bn .font-heading,
+.lang-bn .font-sans,
+.lang-syl-bengali .font-heading,
+.lang-syl-bengali .font-sans {
+  font-family: "Hind Siliguri", sans-serif !important;
+}
+
+.lang-syl-nagri {
+  font-family: 'Noto Sans Syloti Nagri', 'Inter', sans-serif;
+}
+
+.lang-syl-nagri, .lang-syl-nagri * {
+  --font-heading: "Noto Sans Syloti Nagri", sans-serif;
+  --font-sans: "Noto Sans Syloti Nagri", sans-serif;
+}
+
+.lang-syl-nagri .font-heading,
+.lang-syl-nagri .font-sans,
+.lang-syl-nagri .luxury-signature-title {
+  font-family: "Noto Sans Syloti Nagri", sans-serif !important;
+}
+
+/* Luxury title signature styling with subtle metallic reflection light sweep */
+@keyframes luxury-sweep {
+  0% {
+    background-position: -150% 0;
+  }
+  100% {
+    background-position: 150% 0;
+  }
+}
+
+.luxury-signature-title {
+  font-weight: 900;
+  background: linear-gradient(
+    110deg,
+    #cbd5e1 0%,
+    #f8fafc 20%,
+    #ffffff 30%,
+    #f8fafc 40%,
+    #cbd5e1 50%,
+    #f8fafc 70%,
+    #ffffff 80%,
+    #f8fafc 90%,
+    #cbd5e1 100%
+  );
+  background-size: 300% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: luxury-sweep 9s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.12)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.55));
+  
+  /* Responsive sizing & overflow fixes */
+  font-size: clamp(3rem, 10vw, 6.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  max-width: 100%;
+  padding-inline: 20px;
+  text-align: center;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* Adjust letter-spacing and font for Bengali/Sylheti Bengali-script signature title */
+.lang-bn .luxury-signature-title,
+.lang-syl-bengali .luxury-signature-title {
+  letter-spacing: -0.02em;
+  font-family: "Hind Siliguri", sans-serif !important;
+}
+
+/* For mobile screens below 480px, reduce font size further */
+@media (max-width: 480px) {
+  .luxury-signature-title {
+    font-size: clamp(2.2rem, 10.5vw, 3.2rem);
+    padding-inline: 12px;
+  }
+}
+
+/* Hero Name vertical positioning fix */
+.hero-name {
+  margin-top: 36px !important;
+  transform: none !important;
+  position: relative !important;
+  top: 0 !important;
+}
+
+@media (max-width: 640px) {
+  .hero-name {
+    margin-top: 28px !important;
+  }
+}
+
+/* Islamic Divider micro-animation for the flowing light path */
+@keyframes light-flow {
+  0% {
+    transform: translateX(10px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.9;
+  }
+  90% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateX(390px);
+    opacity: 0;
+  }
+}
+
+.divider-light-flow {
+  transform-origin: 0px 0px;
+  animation: light-flow 11s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Hero Portrait Premium Border Animation */
+@keyframes hero-border-sweep {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -100;
+  }
+}
+
+.animated-hero-border-light {
+  stroke-dasharray: 8 92; /* 8% light particle length, 92% empty gap */
+  animation: hero-border-sweep 9s linear infinite;
+}
+
+/* Workshop Header Banner Dynamic Rotating Border Light Motion */
+@keyframes banner-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes banner-glow-pulse {
+  0%, 100% {
+    opacity: 0.45;
+    filter: blur(24px);
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 0.85;
+    filter: blur(36px);
+    transform: scale(1.02);
+  }
+}
+
+.animate-banner-border-spin {
+  animation: banner-spin 5s linear infinite;
+}
+
+.animate-banner-glow-pulse {
+  animation: banner-glow-pulse 4s ease-in-out infinite;
+}
+
+
+
